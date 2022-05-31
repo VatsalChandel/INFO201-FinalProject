@@ -1,7 +1,7 @@
 # Title of Your Final Project Here 
 ## INFO 201 "Foundational Skills for Data Science" — Spring 2022
 
-Authors: Your names here
+Authors: Sirak Yohannes, Vastel Chandell, Jacob Pickett, Jacob Pitt, Jiawei Hu
 
 Link: Link to your Shiny App here
 
