@@ -36,7 +36,7 @@ server <- function(input, output) {
 
     gg_caff <- ggplotly(caff_drink_plot,
       tooltip = "text",
-      height = 800,
+      height = 450,
       width = 1000
     )
 
