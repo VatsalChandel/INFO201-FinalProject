@@ -6,12 +6,6 @@ library("tidyverse")
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
 
-caffeine_data <- caffeine_data %>%
-  mutate(caffeine_by_vol = Caffeine..mg. / Volume..ml.)
-
-
-
-
 my_theme <- bs_theme(
   bg = "#0b3d91",
   fg = "white",
@@ -31,24 +25,37 @@ sidebar_panel_widget <- sidebarPanel(
   checkboxGroupInput(
     inputId = "category_select",
     label = "Select Drink Type",
-    choices = c("Coffee" = "Coffee",
-                "Energy Drinks
-" = "Energy Drinks
-"
+    choices = c(
+      "Coffee",
+      "Energy Drinks",
+      "Energy Shots",
+      "Soft Drinks",
+      "Tea",
+      "Water"
     ),
   ),
+  sliderInput(
+    inputId = "volume_slider",
+    label = "Select Volume (ml) Range",
+    min = min(caffeine_data$Volume..ml.),
+    max = max(caffeine_data$Volume..ml.),
+    sep = "",
+    value = c(50, 300)
+  )
 )
 
 main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "caff_drink_plot")
 )
 
+
 page_1 <- tabPanel(
-  "Interactive Page 1",
+  "Saftey!",
   sidebarLayout(
     sidebar_panel_widget,
     main_panel_plot,
-  )
+  ),
+  includeMarkdown("saftey_page.md")
 )
 
 page_2 <- tabPanel(

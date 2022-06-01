@@ -5,29 +5,41 @@ library(dplyr)
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
 
-caffeine_data <- caffeine_data %>%
-  mutate(caffeine_by_vol = Caffeine..mg. / Volume..ml.)
-
-total_caff <- caffeine_data %>%
-  group_by(type) %>%
-  summarize(mean_caffeine = mean(Caffeine..mg.))
-
 
 server <- function(input, output) {
   output$caff_drink_plot <- renderPlotly({
     filtered_df <- caffeine_data %>%
-      filter(type %in% input$category_select)
+      filter(type %in% input$category_select) %>%
+      filter(Volume..ml. >= input$volume_slider[1] &
+        Volume..ml. <= input$volume_slider[2])
     validate(
       need(input$category_select, "Please select a category!")
     )
-    
-    caff_drink_plot <- ggplot(data = caffeine_data) +
-      geom_point(mapping = aes(x = Volume..ml., y = Caffeine..mg., color = type)) +
+
+
+    caff_drink_plot <- ggplot(data = filtered_df) +
+      geom_point(mapping = aes(
+        x = Volume..ml.,
+        y = Caffeine..mg.,
+        color = type,
+        text = paste(
+          "Volume (ml):", Volume..ml.,
+          "\nCaffeine (mg):", Caffeine..mg.,
+          "\nDrink:", drink
+        )
+      )) +
       labs(
-        title = "Title",
-        x = "X axis", y = "Y axis"
+        title = "Caffeine of Various Types of Drinks and Volume",
+        x = "Volume (ml)",
+        y = "Caffeine (mg)"
       )
-    
-    return(caff_drink_plot)
+
+    gg_caff <- ggplotly(caff_drink_plot,
+      tooltip = "text",
+      height = 800,
+      width = 1000
+    )
+
+    return(gg_caff)
   })
 }

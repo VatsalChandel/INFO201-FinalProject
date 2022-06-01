@@ -6,27 +6,32 @@ library("dplyr")
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
 View(caffeine_data)
-
-
-caffeine_data <- caffeine_data %>%
-  mutate(caffeine_by_vol = Caffeine..mg. / Volume..ml.)
+colnames(caffeine_data)
 
 
 
-total_caff <- caffeine_data %>%
-  group_by(type) %>%
-  summarize(mean_caffeine = mean(Caffeine..mg.))
-
-
-temp_plot2 <- ggplot(data = total_caff) +
-  geom_col(aes(x = type, y = mean_caffeine,
-               fill = type),
-           width = 0.5) +
+caff_drink_plot <- ggplot(data = caffeine_data) +
+  geom_point(mapping = aes(x = Volume..ml., y = Caffeine..mg., color = type)) +
   labs(
-    title = "Average Caffeine Amounts Per Drink Types",
-    x = "Drink Types", y = "Average Caffeine (mg)"
+    title = "Title",
+    x = "X axis", y = "Y axis"
   )
 
 
 
-ggplotly(temp_plot2)
+
+ggplotly(caff_drink_plot)
+
+
+
+
+smallest <- caffeine_data %>% filter(Caffeine..mg. == min(Caffeine..mg.)) 
+smallest
+
+data_new1 <- caffeine_data[order(caffeine_data$Caffeine..mg., decreasing = TRUE), ]
+data_new1 <- Reduce(rbind,                                 # Top N highest values by group
+                    by(data_new1,
+                       data_new1["Caffeine..mg."],
+                       head,
+                       n = 3))
+data_new1[1:10]                                                  # Print updated data
