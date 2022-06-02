@@ -164,7 +164,7 @@ return(gg_type)
                     fill = drink),
                 position = "dodge")
      
-     output$value <- renderPrint({ input$radio })
+     
      
      
      

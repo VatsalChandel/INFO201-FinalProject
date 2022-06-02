@@ -4,6 +4,7 @@ library(markdown)
 library("tidyverse")
 library(shiny)
 
+source("server.R")
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
 caffine_price <- read.csv("data/caffeine_price.csv", header = TRUE, sep = ",") 
@@ -125,19 +126,29 @@ Value <- ggplot(data = topdrinks_caffine) +
            position = "dodge")
 
 
+sidebar_panel_widgett <- sidebarPanel(
+  selectInput(
+    inputId = "user_selection",
+    label = "drink",
+    choices = topdrinks_caffine$drink,
+    # True allows you to select multiple choices
+    multiple = TRUE 
+  )
+)
 
-radioButtons("radio", label = h3("Radio buttons"),
-             choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3), 
-             selected = 1)
-
+main_panel_plott <- mainPanel(
+  #  plotOutput(outputId = "climate_plot")
+  # Make plot interactive
+  plotlyOutput(outputId = "Value")
+)
 
 
 
 page_1 <- tabPanel(
   "Type",
   sidebarLayout(
-  radioButtons,
-  Value,
+  type_sidebar_panel_widget,
+  type_main_panel_plot,
   ),
   includeMarkdown("type_page.md")
 )
@@ -145,10 +156,9 @@ page_1 <- tabPanel(
 page_2 <- tabPanel(
   "Value",
   sidebarLayout(
-    sidebar_panel_dropdown,
-    "Page 2"
-  ),
-
+    sidebar_panel_widgett,
+    main_panel_plott
+  )
 )
 
 
