@@ -133,6 +133,7 @@ page_2 <- tabPanel(
 
 )
 
+
 page_3 <- tabPanel(
   "Safety",
   sidebarLayout(

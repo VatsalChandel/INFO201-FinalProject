@@ -6,6 +6,7 @@ library(shiny)
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
 
+
 server <- function(input, output) {
   output$caff_drink_plot <- renderPlotly({
     filtered_df <- caffeine_data %>%
