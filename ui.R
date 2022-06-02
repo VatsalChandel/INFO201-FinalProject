@@ -6,44 +6,51 @@ library(shiny)
 source("server.R")
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
-caffine_price <- read.csv("data/caffeine_price.csv", header = TRUE, sep = ",") 
+caffine_price <- read.csv("data/caffeine_price.csv", header = TRUE, sep = ",")
 
-brand_df <- caffeine_data %>% 
-  mutate("brand" = gsub("\\ .*" , "", caffeine_data$drink)) %>% 
-  mutate("caffeine_per_calories" = Caffeine..mg. / Calories) %>% 
+brand_df <- caffeine_data %>%
+  mutate("brand" = gsub("\\ .*", "", caffeine_data$drink)) %>%
+  mutate("caffeine_per_calories" = Caffeine..mg. / Calories) %>%
   filter_all(all_vars(!is.infinite(.)))
 
-coffee_df <- brand_df%>% 
-  filter(type == "Coffee") %>% 
-  arrange(-caffeine_per_calories) %>% 
+coffee_df <- brand_df %>%
+  filter(type == "Coffee") %>%
+  arrange(-caffeine_per_calories) %>%
   slice_max(n = 15, order_by = caffeine_per_calories)
 
-energy_drinks_df <- brand_df %>% 
-  filter(type == "Energy Drinks") %>% 
-  arrange(-caffeine_per_calories) %>% 
+energy_drinks_df <- brand_df %>%
+  filter(type == "Energy Drinks") %>%
+  arrange(-caffeine_per_calories) %>%
   slice_max(n = 15, order_by = caffeine_per_calories)
 
-energy_shots_df <- brand_df %>% 
-  filter(type == "Energy Shots") %>% 
-  arrange(-caffeine_per_calories) %>% 
+energy_shots_df <- brand_df %>%
+  filter(type == "Energy Shots") %>%
+  arrange(-caffeine_per_calories) %>%
   slice_max(n = 15, order_by = caffeine_per_calories)
 
-soft_drinks_df <- brand_df %>% 
-  filter(type == "Soft Drinks") %>% 
-  arrange(-caffeine_per_calories) %>% 
+soft_drinks_df <- brand_df %>%
+  filter(type == "Soft Drinks") %>%
+  arrange(-caffeine_per_calories) %>%
   slice_max(n = 15, order_by = caffeine_per_calories)
 
-tea_df <- brand_df %>% 
-  filter(type == "Tea") %>% 
-  arrange(-caffeine_per_calories) %>% 
+tea_df <- brand_df %>%
+  filter(type == "Tea") %>%
+  arrange(-caffeine_per_calories) %>%
   slice_max(n = 15, order_by = caffeine_per_calories)
 
-water_df <- brand_df %>% 
-  filter(type == "Water") %>% 
-  arrange(-caffeine_per_calories) %>% 
+water_df <- brand_df %>%
+  filter(type == "Water") %>%
+  arrange(-caffeine_per_calories) %>%
   slice_max(n = 15, order_by = caffeine_per_calories)
 
-type_df <- rbind(tea_df, water_df, soft_drinks_df, energy_shots_df, energy_drinks_df, coffee_df)
+type_df <- rbind(
+  tea_df,
+  water_df,
+  soft_drinks_df,
+  energy_shots_df,
+  energy_drinks_df,
+  coffee_df
+)
 
 my_theme <- bs_theme(
   bg = "#0b3d91",
@@ -101,7 +108,6 @@ type_sidebar_panel_widget <- sidebarPanel(
       "Water"
     ),
   ),
-  
   sliderInput(
     inputId = "c_p_c_slider",
     label = "Adjust the Caffeine Per Calorie Value",
@@ -118,11 +124,14 @@ type_main_panel_plot <- mainPanel(
 
 topdrinks_caffine <- caffine_price %>% filter(price > 0, na.rm = TRUE)
 
-Value <- ggplot(data = topdrinks_caffine) +
-  geom_col(aes(x = Volume, 
-               y = Volume /caffeine, 
-               fill = ParkName),
-           position = "dodge")
+gg_val_plot <- ggplot(data = topdrinks_caffine) +
+  geom_col(aes(
+    x = Volume,
+    y = Volume / caffeine,
+    fill = ParkName
+  ),
+  position = "dodge"
+  )
 
 
 sidebar_panel_widgett <- sidebarPanel(
@@ -130,15 +139,12 @@ sidebar_panel_widgett <- sidebarPanel(
     inputId = "user_selection",
     label = "drink",
     choices = topdrinks_caffine$drink,
-    # True allows you to select multiple choices
-    multiple = TRUE 
+    multiple = TRUE
   )
 )
 
 main_panel_plott <- mainPanel(
-  #  plotOutput(outputId = "climate_plot")
-  # Make plot interactive
-  plotlyOutput(outputId = "Value")
+  plotlyOutput(outputId = "value_plot")
 )
 
 
@@ -146,8 +152,8 @@ main_panel_plott <- mainPanel(
 page_1 <- tabPanel(
   "Type",
   sidebarLayout(
-  type_sidebar_panel_widget,
-  type_main_panel_plot,
+    type_sidebar_panel_widget,
+    type_main_panel_plot,
   ),
   includeMarkdown("type_page.md")
 )
