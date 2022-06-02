@@ -1,52 +1,10 @@
 library(ggplot2)
 library(plotly)
 library(dplyr)
+library(shiny)
 
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
-
-brand_df <- caffeine_data %>% 
-  mutate("brand" = gsub("\\ .*" , "", caffeine_data$drink)) %>% 
-  mutate("caffeine_per_calories" = Caffeine..mg. / Calories) %>% 
-  filter_all(all_vars(!is.infinite(.)))
-
-coffee_df <- brand_df%>% 
-  filter(type == "Coffee") %>% 
-  arrange(-caffeine_per_calories) %>% 
-  slice_max(n = 15, order_by = caffeine_per_calories)
-  
-energy_drinks_df <- brand_df %>% 
-  filter(type == "Energy Drinks") %>% 
-  arrange(-caffeine_per_calories) %>% 
-  slice_max(n = 15, order_by = caffeine_per_calories)
-
-energy_shots_df <- brand_df %>% 
-  filter(type == "Energy Shots") %>% 
-  arrange(-caffeine_per_calories) %>% 
-  slice_max(n = 15, order_by = caffeine_per_calories)
-
-soft_drinks_df <- brand_df %>% 
-  filter(type == "Soft Drinks") %>% 
-  arrange(-caffeine_per_calories) %>% 
-  slice_max(n = 15, order_by = caffeine_per_calories)
-
-tea_df <- brand_df %>% 
-  filter(type == "Tea") %>% 
-  arrange(-caffeine_per_calories) %>% 
-  slice_max(n = 15, order_by = caffeine_per_calories)
-
-water_df <- brand_df %>% 
-  filter(type == "Water") %>% 
-  arrange(-caffeine_per_calories) %>% 
-  slice_max(n = 15, order_by = caffeine_per_calories)
-
-type_df <- rbind(tea_df, water_df, soft_drinks_df, energy_shots_df, energy_drinks_df, coffee_df)
-
-blank_theme <- theme_bw() +
-  theme(
-    plot.background = element_blank(), # remove gray background
-    plot.title = element_text(hjust = 0.5)
-  )
 
 server <- function(input, output) {
   output$caff_drink_plot <- renderPlotly({
@@ -88,8 +46,58 @@ server <- function(input, output) {
   
   output$type_plot <- renderPlotly({
     
+    brand_df <- caffeine_data %>% 
+      mutate("brand" = gsub("\\ .*" , "", caffeine_data$drink)) %>% 
+      mutate("caffeine_per_calories" = Caffeine..mg. / Calories) %>% 
+      filter_all(all_vars(!is.infinite(.)))
+    
+    coffee_df <- brand_df%>% 
+      filter(type == "Coffee") %>% 
+      arrange(-caffeine_per_calories) %>% 
+      slice_max(n = 15, order_by = caffeine_per_calories)
+    
+    energy_drinks_df <- brand_df %>% 
+      filter(type == "Energy Drinks") %>% 
+      arrange(-caffeine_per_calories) %>% 
+      slice_max(n = 15, order_by = caffeine_per_calories)
+    
+    energy_shots_df <- brand_df %>% 
+      filter(type == "Energy Shots") %>% 
+      arrange(-caffeine_per_calories) %>% 
+      slice_max(n = 15, order_by = caffeine_per_calories)
+    
+    soft_drinks_df <- brand_df %>% 
+      filter(type == "Soft Drinks") %>% 
+      arrange(-caffeine_per_calories) %>% 
+      slice_max(n = 15, order_by = caffeine_per_calories)
+    
+    tea_df <- brand_df %>% 
+      filter(type == "Tea") %>% 
+      arrange(-caffeine_per_calories) %>% 
+      slice_max(n = 15, order_by = caffeine_per_calories)
+    
+    water_df <- brand_df %>% 
+      filter(type == "Water") %>% 
+      arrange(-caffeine_per_calories) %>% 
+      slice_max(n = 15, order_by = caffeine_per_calories)
+    
+    type_df <- rbind(tea_df, water_df, soft_drinks_df, energy_shots_df, energy_drinks_df, coffee_df)
+    
+    #Brand Renaming
+    type_df[type_df$brand == "Oi","brand" ] <- "Oi Ocha"
+    type_df[type_df$brand == "Crystal","brand" ] <- "Crystal Light"
+    type_df[type_df$brand == "Guayaki","brand" ] <- "Guayaki Yerba Mate"
+    type_df[type_df$brand == "Brew","brand" ] <- "Dr Kombucha"
+    type_df[type_df$brand == "Crystal","brand" ] <- "Crystal Light"
+    
    filtered_type_df <- type_df %>%
      filter(type %in% input$type_select)
+   
+   blank_theme <- theme_bw() +
+     theme(
+       plot.background = element_blank(), # remove gray background
+       plot.title = element_text(hjust = 0.5)
+     )
     
      type_plot <- ggplot(data = filtered_type_df) +
       geom_col(mapping = aes(
