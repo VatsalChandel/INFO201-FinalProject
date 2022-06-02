@@ -113,6 +113,7 @@ server <- function(input, output) {
     type_df[type_df$brand == "Coffee","brand" ] <- "Coffee Bean & Tea"
     type_df[type_df$brand == "7","brand" ] <- "7 Eleven"
     type_df[type_df$brand == "Tim","brand" ] <- "Tim Hortons"
+    type_df[type_df$brand == "Dunkin'","brand" ] <- "Dunkin' Donuts"
     type_df[type_df$drink == "doc Soda","drink" ] <- "Doc Soda"
     
    filtered_type_df <- type_df %>%
