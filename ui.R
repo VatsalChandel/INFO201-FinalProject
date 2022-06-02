@@ -25,7 +25,7 @@ intro_tab <- tabPanel(
 sidebar_panel_widget <- sidebarPanel(
   checkboxGroupInput(
     inputId = "category_select",
-    label = "Select Drink Type",
+    label = "Drink Types",
     choices = c(
       "Coffee",
       "Energy Drinks",
