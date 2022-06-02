@@ -19,6 +19,8 @@ server <- function(input, output) {
 
 
     caff_drink_plot <- ggplot(data = filtered_df) +
+      geom_hline(aes(yintercept = 400),
+    color = "blue", linetype = "dashed", size = 1) +
       geom_point(mapping = aes(
         x = Volume..ml.,
         y = Caffeine..mg.,
