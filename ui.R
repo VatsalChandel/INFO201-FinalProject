@@ -64,7 +64,7 @@ page_2 <- tabPanel(
 )
 
 page_3 <- tabPanel(
-  "Saftey",
+  "Safety",
   sidebarLayout(
     sidebar_panel_widget,
     main_panel_plot,

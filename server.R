@@ -29,7 +29,7 @@ server <- function(input, output) {
         )
       )) +
       labs(
-        title = "Caffeine of Various Types of Drinks and Volume",
+        title = "Caffeine vs Volume by Drink Type",
         x = "Volume (ml)",
         y = "Caffeine (mg)"
       )
