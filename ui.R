@@ -3,7 +3,6 @@ library(bslib)
 library(markdown)
 library("tidyverse")
 library(shiny)
-
 source("server.R")
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")

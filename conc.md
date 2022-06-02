@@ -7,6 +7,12 @@ From the graph of safety page, users can see that multiple coffee products conta
         - What is the volume of the drinks?
         - What is the caffeine content of the drinks?
 
+## Value
+Selecting specific brand of drinks from the radio button, the consumers can learn the price of volume/caffeine ratio from these drinks. It could be a good resources when consumers want to know how much they spend on specific amount of volume/caffeine ratio when they buy these drinks.
+- In __Value__ page, we wanted to answer how the different types of drinks differ in caffeine and calorie content. For consumers, we wanted to answer questions like:
+        - How much will the consumers spend on a drink comparing the ratio of volume/caffeine?
+        - What is the ratio of volume/caffeine of a specific brand of drink?
+
 ## Type
 By choosing this proportion, consumers can make informed decisions about how strong these drinks are, along with which brands produce these drinks.
 - Another reason why we chose to use calories as a divisor was to show if the drink will also provide sustenance and nourishment relative to the amount of caffeine in it. Consumers can also make better dieting choices and see if there is a more efficient way to get their desired amount of caffeine without consuming excess calories (For that, they would likely want to chose a drink like Biohazard Coffee, who has a Caffeine to Calorie Ratio of about 309 mg of caffeine per calorie).
