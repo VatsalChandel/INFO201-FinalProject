@@ -1,52 +1,21 @@
-# Introduction 
+![Various caffeinated drinks](https://i.insider.com/594982e6e592ed32008b5ada?width=1136&format=jpeg)
 
-- Caffeine is a big part in individual’s lives. Whether it comes from coffee, tea, or energy drinks, people love to consume it. And because there are so many ways for an individual to consume caffeine, we are curious to see different statistics about brands, types of caffeinated drinks, and the overall caffeine content in them.
-- Here are the questions that we aim to answer:
-  - What types of drinks have the most caffeine?
-  - Which brands contain the most caffeine?
-    - In what type of drink? 
-  - Which brands contain the least caffeine?
-    - In what type of drink?
-  - What is the average caffeine amount per milligram across different brands?
-    - Across different types of drinks?
-  - What is the average caffeine amount per calorie across different brands?
-    - Across different types of drinks?
-  - What is the average colorie amount per volume across different brands? 
-    - Across different types of drinks? 
-    
-- Understanding the difference in caffeine content in the different drinks could be important for those who are trying to get away from caffeine. Caffeine addiction can be a huge problem for individuals because it can lead to worse sleep quality, an increased heart rate, anxiety and fatigue. Being able to find substitutes could greatly benefit those who need it. Also by looking at this dataset, we will be able to look at what brands put the most calories in their drinks. Having an answer to this could also benefit those who are trying to cut down on their calorie intake.
+# Introduction
 
-# Data
+For this project, we seek to inform consumers of caffeinated drinks on the products available to them based on three areas of focus: Type, Value, and Safety.
 
-Where did you find the data? Please include a link to the data source 
+Firstly, we will divide up the caffeine products available into different type groupings. These are Coffee, Energy Drinks, Energy Shots, Soft Drinks, Tea, and Water. Within these type groups, we will assess the different caffeine and calorie contents of individual drinks from various brands. From this information, a consumer can be informed on what type of drink they should buy based on trends in caffeine and calorie content within drink types, as well as being informed on which brands and which specific products best fit their preferences.**
 
-- We found our dataset on a website called Kaggle. https://www.kaggle.com/datasets/heitornunes/caffeine-content-of-drinks 
+Next, we will perform a value assessment on some of the most popular caffeinated drinks to determine relative volume to price and caffeine to price ratios. From this information, consumers who are value-minded can be informed on which popular caffeinated products provide the most drink and caffeine content for their money.
 
-Who collected the data?  
+Finally, we will perform a safety assessment of various caffeinated drinks to determine how they compare to health official recommendations on caffeine and calorie intake by volume. From this information, a consumer can be informed on which caffeinated products are the safest to be consumed in their preferred style, or whether the products they already drink are safe or not in terms of daily caffeine and calorie intake.
 
-- The Caffeine Informer collected this data. 
+# The Dataset
 
-How was the data collected or generated?
+To answer these questions, we will be utilizing data from *Caffeine Informer* on the caffeine and calorie contents of most caffeinated drink brands and types. Link to the dataset: https://www.kaggle.com/datasets/heitornunes/caffeine-content-of-drinks
 
-- They (The Caffeine Informer) collected the data by hand, through calling manufacturers, scanning medical journals, and by looking through company websites. 
+This dataset was collected manually by contacting manufacturers, consulting medical journals, and studying company websites.** *Caffeine Informer* collected the data to provide a singular source of information on caffeinated drinks. Brands are often not required by law to test their products and present drink contents in an easily accessible manner, so this dataset serves to address this issue.
 
-Why was the data collected?
+Some questions we considered when working with the dataset were to do with the validity of the information and the choice of variables included in the dataset. We cannot be sure that caffeinated drink companies are accurately reporting caffeine and calorie contents and must rely on their word or that of third-party testers. There exists the possibility that wealthy drink manufacturers hold influence over those who created the dataset and have they data included be skewed to improve the perception of their products.
 
-- Data in this field is scarce and difficult to find. Stores and boutique brands are not required by law to test their products, so data in this field could significantly help consumers make educated decisions. 
-
-
-How many observations (rows) are in your data?  
-
-- 610
-
-How many features (columns) are in the data?  
-
-- 5
-
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-
-- Are companies properly reporting these amounts of caffeine? Do the manufacturers have any undue influence on the people who created this dataset?What are possible limitations or problems with this data?   (at least 200 words)
-
-What are possible limitations or problems with this data?   (at least 200 words)
-
-- There are many limitations with this dataset due to its lack of features and its lack of brand name indication. One of the major issues with this dataset is the limited information available about the items in this dataset. This dataset only provides the drink’s name, caffeine content, volume, amount of calories, and drink type. There also is no category for the brand of the observations, meaning that we will have to take the time to categorize all of these drinks manually. Many of the drink names are difficult to associate with a certain brand and can often be misleading if someone is not familiar with the drink. There is no indicator for what brand is selling a drink in the dataset, meaning that parties using the data would have to assume that the brand is in the name, or look for the brand on their own. Additionally, the type of caffeine is not specified, meaning that these sources of caffeine could have different chemical compositions and different effects on consumers. The source of calories is also not specified, which could make it difficult for us to draw any valid conclusions in relation to the drink and its contents. A more detailed dataset would ideally have most of the ingredients from the nutrition label on the back listed, in order to gain a better understanding of the ingredients. The dataset also lacks a quantifier for how much caffeine is in each milliliter of the drinks.
+Within the dataset itself, there are a number of limitations which must be considered. For each individual caffeinated drink product, no brand information is listed so these connections must be made by ourselves. Many of the product name listings are difficult to associate with a certain brand and can be misleading due to over-saturation of the space. There is also no indication within the data of the type of caffeine used in each product, meaning these sources of caffeine could contain different chemical compositions, presenting different effects and health concerns for consumers. The source of calories in each drink is also not specified, furthering the difficulty in making precise assessments on contents and consumer health. An ideal dataset would also include all ingredients listed on the product nutrition label, which this dataset lacks.
