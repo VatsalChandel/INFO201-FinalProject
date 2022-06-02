@@ -128,7 +128,7 @@ server <- function(input, output) {
         y = caffeine_per_calories,
         text = paste(
           "Brand:", brand,
-          "\nCaffeine / Calories =", caffeine_per_calories,
+          "\nCaffeine / Calorie =", caffeine_per_calories,
           "\nDrink:", drink
         ),
         fill = drink,
