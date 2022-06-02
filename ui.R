@@ -2,6 +2,7 @@ library(plotly)
 library(bslib)
 library(markdown)
 library("tidyverse")
+library(shiny)
 
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
@@ -49,6 +50,29 @@ main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "caff_drink_plot")
 )
 
+<<<<<<< Updated upstream
+=======
+type_sidebar_panel_widget <- sidebarPanel(
+  selectInput(
+    inputId = "type_select",
+    label = "Select Drink Type",
+    choices = c(
+      "Coffee",
+      "Energy Drinks",
+      "Energy Shots",
+      "Soft Drinks",
+      "Tea",
+      "Water"
+    ),
+  )
+)
+
+type_main_panel_plot <- mainPanel(
+  plotlyOutput(outputId = "type_plot")
+)
+
+
+>>>>>>> Stashed changes
 page_1 <- tabPanel(
   "Type",
   fluidPage(
@@ -57,10 +81,18 @@ page_1 <- tabPanel(
 )
 
 page_2 <- tabPanel(
+<<<<<<< Updated upstream
   "Value",
   fluidPage(
     "Page 2"
   )
+=======
+  "Type",
+  sidebarLayout(
+    type_sidebar_panel_widget,
+    type_main_panel_plot,
+  ),
+>>>>>>> Stashed changes
 )
 
 page_3 <- tabPanel(
