@@ -42,7 +42,7 @@ sidebar_panel_widget <- sidebarPanel(
     min = min(caffeine_data$Volume..ml.),
     max = max(caffeine_data$Volume..ml.),
     sep = "",
-    value = c(50, 300)
+    value = c(7.393375, 1419.528)
   )
 )
 
@@ -98,7 +98,7 @@ page_3 <- tabPanel(
 conclusion_page <- tabPanel(
   "Conclusion",
   fluidPage(
-    "Conclusions about 250"
+    includeMarkdown("conc.md")
   )
 )
 
