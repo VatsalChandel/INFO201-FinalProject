@@ -139,7 +139,8 @@ sidebar_panel_widgett <- sidebarPanel(
     inputId = "user_selection",
     label = "drink",
     choices = topdrinks_caffine$drink,
-    multiple = TRUE
+    multiple = TRUE,
+    selected = "Dunkin' Cold Brew"
   )
 )
 

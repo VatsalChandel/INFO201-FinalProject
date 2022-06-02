@@ -1,30 +1,11 @@
-# Analysis
-## Safety
-From the graph of safety page, users can see that multiple coffee products contain more caffeine than is safe to be consumed in one day, including Black Label Brewed Coffee, Biohazard Coffee, and Stipe Miocic Extra Strength Coffee. Although many non-coffee caffeinated drinks contain less caffeine than the daily safe maximum, some contain a very small volume of liquid. Consumers should consider how much of a caffeinated drink they intend to consume during a day when selecting a product to purchase.
-- The vary amount of different drinks' volume would provide different amount caffeine. Also, there are so many types of drinks can provide caffeine to people every day.
-- In __Safety__ page, we wanted to answer how the different types of drinks differ in caffeine and calorie content. For consumers, we wanted to answer questions like:
-        - What specific brand of drink contains more than 400 mg cafeeine?
-        - What is the volume of the drinks?
-        - What is the caffeine content of the drinks?
+## Conclusion
 
-## Value
-Selecting specific brand of drinks from the radio button, the consumers can learn the price of volume/caffeine ratio from these drinks. It could be a good resources when consumers want to know how much they spend on specific amount of volume/caffeine ratio when they buy these drinks.
-- In __Value__ page, we wanted to answer how the different types of drinks differ in caffeine and calorie content. For consumers, we wanted to answer questions like:
-        - How much will the consumers spend on a drink comparing the ratio of volume/caffeine?
-        - What is the ratio of volume/caffeine of a specific brand of drink?
+From this project we were able to judge a variety of caffeinated drinks based on three primary criterion in order to better inform a consumer on which product would best suit their preferences.
 
-## Type
-By choosing this proportion, consumers can make informed decisions about how strong these drinks are, along with which brands produce these drinks.
-- Another reason why we chose to use calories as a divisor was to show if the drink will also provide sustenance and nourishment relative to the amount of caffeine in it. Consumers can also make better dieting choices and see if there is a more efficient way to get their desired amount of caffeine without consuming excess calories (For that, they would likely want to chose a drink like Biohazard Coffee, who has a Caffeine to Calorie Ratio of about 309 mg of caffeine per calorie).
+From the Type consideration we were able to organize caffeinated drinks by type and brand to determine how each compares in terms of caffeine content per calorie. From this chart we were able to determine that some caffeinated drink types such as Energy Drinks are relatively homogeneous in terms of caffeine content per calorie whereas Soft Drinks contain more variability. From this, a consumer could determine which type of caffeinated drink best suits their preferences in terms of caffeine and calorie content, and from there could specify the specific brand and type of drink they would prefer. In this way, a consumer is able to narrow down there choices within the wide variety of caffeinated drinks available to make their decision easier.
 
-- In __Type__ page, we wanted to answer how the different types of drinks differ in caffeine and calorie content. For consumers, we wanted to answer questions like:
-      - How do the different types of drinks compare in caffeine content?
-      - Which drinks in each of these types have the right amount of caffeine and calories for me?
-      - Which brands produce which types of drinks, and how much caffeine and calories are in their drinks?
+From the Value consideration we demonstrated how some of the most popular caffeinated drink products compare in terms of price to volume. From this chart we can see that products like Arizona Iced Tea and Mountain Dew have an extremely good volume to price value ratio, whereas products like 5 Hour Energy and Starbucks Bottled Cold Brew have a much worse value. This information allows the money-minded consumer to determine which caffeinated drink will be the greatest value for them in terms of the volume in liquid received for their purchase. This information can help customers gain a better understanding of which products may be overpriced based on brand name recognition and highlight more valuable products they may not have previously considered.
 
-# Conclusion
-Caffeine is regarded as the stimulating ingredient, and coffee itself is one of the most popular beverage in our daily lives. However, not only coffee contains caffeine, but also other drinks we listed in the graph contain caffeine. The excess caffeine would put people's health at risk.
+From the Safety consideration we determined that some caffeinated drinks contain more caffeine than is safe to be consumed within a single day. These products include Black Label Brewed Coffee, Biohazard Coffee, and Stipe Miocic Extra Strength Coffee. Although many non-coffee caffeinated drinks contain less caffeine than the daily safe maximum, some contain a very small volume of liquid. Consumers should consider how much of a caffeinated drink they intend to consume during a day when selecting a product to purchase. From this chart, a consumer can be informed on whether a drink falls within the safe guidelines for caffeine consumption, and can ascertain an idea of how many drinks they could have during a day to stay within safe caffeine consumption limits.
 
-Some brands of coffee contains much more caffeine than is safe to be consumer in one day. The healthy adults can take around 400 mg caffeine per day, but some coffee can provide even more than 1000 mg caffeine per serve. When we regard these drinks as our daily beverage, they are actually endanger our health.
-
-This means we lack policy to regulate the caffeine drinks. Even though majority of caffeine content drinks are in the safe range, there should be clear label on each drink to line out the caffine content. Some restaurants would line out the estimated calorie on the menu, so some coffee shop or cafe can also label out the caffeine contents of drinks.  
+With this information, a consumer can be the best informed on the caffeinated drinks available to them and which suits their preferences in terms of Type, Value, and Safety, in order to make an informed purchase.
