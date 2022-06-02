@@ -1,4 +1,4 @@
-# Saftey!
+## Saftey!
 
 
 - The goal of this chart is to help communicate to readers how different drinks differ in caffeine and volume. We hope that this will help individuals make better choices when it comes to caffeine consumption by helping them achieve similar goals in a healthier and safer way.

@@ -33,6 +33,7 @@ sidebar_panel_widget <- sidebarPanel(
       "Tea",
       "Water"
     ),
+    selected = "Coffee",
   ),
   sliderInput(
     inputId = "volume_slider",
@@ -48,9 +49,22 @@ main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "caff_drink_plot")
 )
 
-
 page_1 <- tabPanel(
-  "Saftey!",
+  "Type",
+  fluidPage(
+    "Page 1"
+  )  
+)
+
+page_2 <- tabPanel(
+  "Value",
+  fluidPage(
+    "Page 2"
+  )
+)
+
+page_3 <- tabPanel(
+  "Saftey",
   sidebarLayout(
     sidebar_panel_widget,
     main_panel_plot,
@@ -58,21 +72,8 @@ page_1 <- tabPanel(
   includeMarkdown("saftey_page.md")
 )
 
-page_2 <- tabPanel(
-  "Interactive Page 2",
-  fluidPage(
-    "Page 2"
-  )
-)
-page_3 <- tabPanel(
-  "Interactive Page 3",
-  fluidPage(
-    "Page 3"
-  )
-)
-
 conclusion_page <- tabPanel(
-  "Conclusion Page",
+  "Conclusion",
   fluidPage(
     "Conclusions about 250"
   )
@@ -80,7 +81,7 @@ conclusion_page <- tabPanel(
 
 ui <- navbarPage(
   theme = my_theme,
-  "Title!",
+  "Assesment of Various Caffeinated Drinks",
   intro_tab,
   page_1,
   page_2,
