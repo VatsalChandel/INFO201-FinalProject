@@ -5,6 +5,7 @@ library(shiny)
 
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
+caffine_price <- read.csv("data/caffeine_price.csv", header = TRUE, sep = ",") 
 
 
 server <- function(input, output) {
@@ -169,7 +170,7 @@ return(gg_type)
                       y = Volume_Price_Ratio, 
                       fill = drink),
                   position = "dodge")
-       return(Value_plot)
+       return(Value)
      })
      
      
