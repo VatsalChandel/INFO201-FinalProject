@@ -115,7 +115,9 @@ server <- function(input, output) {
     type_df[type_df$drink == "doc Soda","drink" ] <- "Doc Soda"
     
    filtered_type_df <- type_df %>%
-     filter(type %in% input$type_select)
+     filter(type %in% input$type_select) %>% 
+     filter(caffeine_per_calories >= input$c_p_c_slider[1] &
+            caffeine_per_calories <= input$c_p_c_slider[2])
    
    blank_theme <- theme_bw() +
      theme(
@@ -130,7 +132,7 @@ server <- function(input, output) {
         y = caffeine_per_calories,
         text = paste(
           "Brand:", brand,
-          "\nCaffeine / Calories", caffeine_per_calories,
+          "\nCaffeine / Calorie =", caffeine_per_calories,
           "\nDrink:", drink
         ),
         fill = drink,
