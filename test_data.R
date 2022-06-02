@@ -5,10 +5,20 @@ library("dplyr")
 
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
+caffine_price <- read.csv("data/caffeine_price.csv", header = TRUE, sep = ",")
 View(caffeine_data)
 colnames(caffeine_data)
 
 
+topdrinks_caffine <- caffine_price %>% filter(price > 0, na.rm = TRUE) %>% mutate("Volume_Price_Ratio" = Volume..ml. / Caffeine..mg.)
+
+Value <- ggplot(data = topdrinks_caffine) +
+  geom_col(aes(x = price, 
+               y = Volume_Price_Ratio, 
+               fill = drink),
+           position = "dodge")
+
+ggplotly(Value)
 
 caff_drink_plot <- ggplot(data = caffeine_data) +
   geom_point(mapping = aes(x = Volume..ml., y = Caffeine..mg., color = type)) +

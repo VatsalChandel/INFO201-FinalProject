@@ -154,6 +154,22 @@ server <- function(input, output) {
      )
      
 return(gg_type)
+     
+  topdrinks_caffine <- caffine_price %>% filter(price > 0, na.rm = TRUE) %>%
+    mutate("Volume_Price_Ratio" = Volume..ml. / Caffeine..mg.)
+     
+     Value <- ggplot(data = topdrinks_caffine) +
+       geom_col(aes(x = price, 
+                    y = Volume_Price_Ratio, 
+                    fill = drink),
+                position = "dodge")
+     
+     output$value <- renderPrint({ input$radio })
+     
+     
+     
+     
+
   
   })
   

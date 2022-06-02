@@ -6,6 +6,7 @@ library(shiny)
 
 
 caffeine_data <- read.csv("data/caffeine.csv", header = TRUE, sep = ",")
+caffine_price <- read.csv("data/caffeine_price.csv", header = TRUE, sep = ",") 
 
 brand_df <- caffeine_data %>% 
   mutate("brand" = gsub("\\ .*" , "", caffeine_data$drink)) %>% 
@@ -115,19 +116,36 @@ type_main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "type_plot")
 )
 
+topdrinks_caffine <- caffine_price %>% filter(price > 0, na.rm = TRUE)
+
+Value <- ggplot(data = topdrinks_caffine) +
+  geom_col(aes(x = Volume, 
+               y = Volume /caffeine, 
+               fill = ParkName),
+           position = "dodge")
+
+
+
+radioButtons("radio", label = h3("Radio buttons"),
+             choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3), 
+             selected = 1)
+
+
+
 
 page_1 <- tabPanel(
   "Type",
   sidebarLayout(
-  type_sidebar_panel_widget,
-  type_main_panel_plot,
+  radioButtons,
+  Value,
   ),
   includeMarkdown("type_page.md")
 )
 
 page_2 <- tabPanel(
   "Value",
-  fluidPage(
+  sidebarLayout(
+    sidebar_panel_dropdown,
     "Page 2"
   ),
 
