@@ -5,7 +5,7 @@ From the graph of safety page, users can see that multiple coffee products conta
 - In __Safety__ page, we wanted to answer how the different types of drinks differ in caffeine and calorie content. For consumers, we wanted to answer questions like:
         - What specific brand of drink contains more than 400 mg cafeeine?
         - What is the volume of the drinks?
-        - What os the caffeine content of the drinks?
+        - What is the caffeine content of the drinks?
 
 ## Type
 By choosing this proportion, consumers can make informed decisions about how strong these drinks are, along with which brands produce these drinks.
