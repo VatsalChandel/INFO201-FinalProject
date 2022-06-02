@@ -165,7 +165,9 @@ return(gg_type)
        topdrinks_caffine <- caffine_price %>% filter(price > 0, na.rm = TRUE) %>%
          mutate("Volume_Price_Ratio" = Volume..ml. / Caffeine..mg.)
        
-       Value <- ggplot(data = topdrinks_caffine) +
+       filtered_df <- topdrinks_caffine %>% filter(drink %in% input$user_selection)
+       
+       Value <- ggplot(data = filtered_df) +
          geom_col(aes(x = price, 
                       y = Volume_Price_Ratio, 
                       fill = drink),
