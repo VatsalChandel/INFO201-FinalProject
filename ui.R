@@ -163,7 +163,8 @@ page_2 <- tabPanel(
   sidebarLayout(
     sidebar_panel_widgett,
     main_panel_plott
-  )
+  ), 
+  includeMarkdown("value_page.md")
 )
 
 
