@@ -50,8 +50,6 @@ main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "caff_drink_plot")
 )
 
-<<<<<<< Updated upstream
-=======
 type_sidebar_panel_widget <- sidebarPanel(
   selectInput(
     inputId = "type_select",
@@ -72,27 +70,20 @@ type_main_panel_plot <- mainPanel(
 )
 
 
->>>>>>> Stashed changes
 page_1 <- tabPanel(
   "Type",
-  fluidPage(
-    "Page 1"
+  sidebarLayout(
+  type_sidebar_panel_widget,
+  type_main_panel_plot,
   )  
 )
 
 page_2 <- tabPanel(
-<<<<<<< Updated upstream
   "Value",
   fluidPage(
     "Page 2"
-  )
-=======
-  "Type",
-  sidebarLayout(
-    type_sidebar_panel_widget,
-    type_main_panel_plot,
   ),
->>>>>>> Stashed changes
+
 )
 
 page_3 <- tabPanel(
