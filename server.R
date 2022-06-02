@@ -181,7 +181,12 @@ server <- function(input, output) {
         fill = drink
       ),
       position = "dodge"
-      )
+      )+
+      labs(
+        title = "Volume And Price Ratio",
+        x = "Price",
+        y = "Volume Price Ratio"
+      ) 
     return(gg_val_plot)
   })
 }
