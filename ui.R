@@ -75,7 +75,8 @@ page_1 <- tabPanel(
   sidebarLayout(
   type_sidebar_panel_widget,
   type_main_panel_plot,
-  )  
+  ),
+  includeMarkdown("type_page.md")
 )
 
 page_2 <- tabPanel(
