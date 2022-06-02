@@ -1,6 +1,7 @@
 ![Various caffeinated drinks](https://i.insider.com/594982e6e592ed32008b5ada?width=1136&format=jpeg)
+<img src="https://i.insider.com/594982e6e592ed32008b5ada?width=1136&format=jpeg" alt="Various caffeinated drinks" width="200"/>
 
-# Introduction
+## Introduction
 
 For this project, we seek to inform consumers of caffeinated drinks on the products available to them based on three areas of focus: Type, Value, and Safety.
 
@@ -10,7 +11,8 @@ Next, we will perform a value assessment on some of the most popular caffeinated
 
 Finally, we will perform a safety assessment of various caffeinated drinks to determine how they compare to health official recommendations on caffeine and calorie intake by volume. From this information, a consumer can be informed on which caffeinated products are the safest to be consumed in their preferred style, or whether the products they already drink are safe or not in terms of daily caffeine and calorie intake.
 
-# The Dataset
+
+## The Dataset
 
 To answer these questions, we will be utilizing data from *Caffeine Informer* on the caffeine and calorie contents of most caffeinated drink brands and types. Link to the dataset: https://www.kaggle.com/datasets/heitornunes/caffeine-content-of-drinks
 
