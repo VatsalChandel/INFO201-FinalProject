@@ -79,7 +79,7 @@ sidebar_panel_widget <- sidebarPanel(
     min = min(caffeine_data$Volume..ml.),
     max = max(caffeine_data$Volume..ml.),
     sep = "",
-    value = c(7.393375, 1419.528)
+    value = c(40, 250)
   )
 )
 
