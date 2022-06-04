@@ -1,7 +1,7 @@
 # Assessment of Various Caffeinated Drinks 
 ## INFO 201 "Foundational Skills for Data Science" — Spring 2022
 
-Authors: Sirak Yohannes, Vastel Chandell, Jacob Pickett, Jacob Griffiths, Jiawei Hu
+Authors: Sirak Yohannes, Vatsal Chandel, Jacob Pickett, Jacob Griffiths, Jiawei Hu
 
 Link: https://chandelvatsal.shinyapps.io/Caffeinated-Drinks/
 
